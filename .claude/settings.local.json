@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(& \"C:\\\\xampp\\\\php\\\\php.exe\" -v)",
+      "PowerShell(npx skills add emilkowalski/skills 2>&1)",
+      "PowerShell(Get-Command git -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Command npm -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Command npx -ErrorAction SilentlyContinue)",
+      "PowerShell($env:PATH = [System.Environment]::GetEnvironmentVariable\\(\"PATH\", \"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"PATH\", \"User\"\\); npx skills add emilkowalski/skills 2>&1)",
+      "PowerShell(Get-Command mysql -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Command mariadb -ErrorAction SilentlyContinue)",
+      "PowerShell(& \"C:\\\\XAMPP\\\\php\\\\php.exe\" \"C:\\\\Bitnami\\\\xampp\\\\php\\\\docs\\\\offline-spa\\\\check_admins.php\")",
+      "PowerShell(& \"C:\\\\XAMPP\\\\php\\\\php.exe\" \"C:\\\\TEMP\\\\check_admins.php\")",
+      "PowerShell(Write-Host \"PWD: $\\(Get-Location\\).Path\"; \\(Get-Location\\).Path | Format-Hex)",
+      "PowerShell(Resolve-Path \"C:\\\\Bitnami\\\\xampp\\\\php\\\\docs\\\\offline-spa\"; \\(Get-Item \"C:\\\\Bitnami\\\\xampp\\\\php\\\\docs\\\\offline-spa\"\\).LinkType; \\(Get-Item \"C:\\\\Bitnami\\\\xampp\\\\php\\\\docs\\\\offline-spa\"\\).Target)",
+      "PowerShell(\\(Get-Content \"C:\\\\Bitnami\\\\xampp\\\\php\\\\docs\\\\offline-spa\\\\schema.php\" -Raw\\).Substring\\(0, 3000\\))",
+      "PowerShell(& \"C:\\\\XAMPP\\\\php\\\\php.exe\" -r \"require 'config.php'; \\\\$stmt = \\\\$pdo->query\\('SELECT id, username, email, role, is_active FROM admins'\\); foreach \\(\\\\$stmt->fetchAll\\(\\) as \\\\$row\\) { echo json_encode\\(\\\\$row, JSON_UNESCAPED_UNICODE\\) . PHP_EOL; }\")",
+      "PowerShell(& \"C:\\\\XAMPP\\\\php\\\\php.exe\" \"C:\\\\xampp\\\\htdocs\\\\offline-spa\\\\check_db.php\")",
+      "PowerShell(npx skills add https://github.com/vercel-labs/skills --skill find-skills)",
+      "Bash(npx skills *)",
+      "Bash(mkdir -p .claude)",
+      "Bash(echo '{ *)",
+      "Bash(cp C:/xampp/htdocs/HNY/.claude/launch.json .claude/launch.json)"
+    ]
+  }
+}

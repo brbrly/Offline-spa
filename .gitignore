@@ -1,0 +1,5 @@
+env.php
+.env
+/PHPMailer/
+*.txt
+!README.txt

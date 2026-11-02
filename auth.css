@@ -1,0 +1,232 @@
+/* ===========================================================
+   Offline Spa — Authentication & Profile Luxury Rose Gold Theme
+   =========================================================== */
+
+.auth-body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 75% 20%, rgba(212, 175, 55, 0.25), transparent 50%),
+        radial-gradient(circle at 15% 80%, rgba(168, 90, 108, 0.4), transparent 55%),
+        linear-gradient(135deg, #1C1319, #2A1C27 70%, #151014);
+    color: var(--text-light);
+}
+
+.auth-wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 18px;
+    gap: 24px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    background: var(--cream);
+    color: var(--text-dark);
+    border-radius: var(--radius-lg);
+    padding: 42px 36px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.auth-card h1 {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: var(--plum-900);
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.auth-sub {
+    color: var(--text-mid);
+    margin-bottom: 24px;
+    font-size: .96rem;
+    text-align: center;
+}
+
+.auth-card form .form-field { margin-bottom: 16px; }
+.auth-card .btn { margin-top: 8px; }
+
+.auth-error {
+    background: rgba(168, 90, 108, 0.12);
+    border: 1px solid rgba(168, 90, 108, 0.4);
+    color: var(--rose-800);
+    padding: 11px 16px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 14px;
+    font-size: .92rem;
+    font-weight: 600;
+}
+
+.auth-success {
+    background: rgba(74, 222, 128, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.4);
+    color: #15803D;
+    padding: 11px 16px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 14px;
+    font-weight: 700;
+    font-size: .92rem;
+    text-align: center;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--text-mid);
+    font-size: .94rem;
+}
+.auth-switch a {
+    color: var(--rose-800);
+    font-weight: 700;
+}
+.auth-switch a:hover { text-decoration: underline; }
+
+.account-list { list-style: none; margin-bottom: 24px; }
+.account-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    font-size: .96rem;
+}
+.account-list span { color: var(--text-mid); }
+
+/* Navigation Login & Avatar */
+.nav-login {
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: .85rem;
+    transition: all var(--transition);
+    background: rgba(212, 175, 55, 0.08);
+}
+.nav-login:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+    background: rgba(212, 175, 55, 0.2);
+}
+.navbar.scrolled .nav-login {
+    color: var(--plum-900);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.nav-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--rose-700), var(--rose-800));
+    color: var(--gold-light);
+    border: 2px solid rgba(212, 175, 55, 0.5);
+    box-shadow: 0 8px 20px rgba(168, 90, 108, 0.35);
+    transition: all var(--transition);
+}
+.nav-avatar:hover {
+    transform: scale(1.08);
+    border-color: var(--gold);
+}
+.nav-avatar svg { width: 22px; height: 22px; }
+
+.profile-avatar-lg {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    margin: 0 auto 18px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--plum-800), var(--plum-900));
+    color: var(--gold-light);
+    box-shadow: 0 12px 24px rgba(42, 28, 39, 0.35);
+    border: 2px solid rgba(212, 175, 55, 0.4);
+}
+.profile-avatar-lg svg { width: 44px; height: 44px; }
+
+.pw-box {
+    margin: 8px 0 16px;
+    padding: 14px 16px;
+    border: 1.5px dashed rgba(212, 175, 55, 0.4);
+    border-radius: var(--radius-sm);
+}
+.pw-box summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--plum-900);
+    margin-bottom: 4px;
+}
+.pw-box .form-field { margin-top: 14px; }
+
+.logout-btn {
+    background: transparent;
+    color: var(--rose-800);
+    border: 1.5px solid rgba(168, 90, 108, 0.35);
+}
+.logout-btn:hover { background: rgba(168, 90, 108, 0.1); }
+
+.dev-credit {
+    text-align: center;
+    padding: 18px 14px 24px;
+    font-size: .84rem;
+    color: rgba(250, 247, 242, 0.6);
+    border-top: 1px solid rgba(250, 247, 242, 0.08);
+}
+.dev-credit a { color: var(--gold-light); font-weight: 700; }
+.dev-credit a:hover { text-decoration: underline; }
+.auth-credit { border: 0; padding: 0; color: rgba(250, 247, 242, 0.65); line-height: 1.95; }
+
+.res-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--plum-900);
+    margin: 24px 0 12px;
+}
+.res-item {
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    background: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: var(--radius-sm);
+    font-size: .94rem;
+}
+.res-meta { color: var(--text-mid); font-size: .88rem; margin: 3px 0 6px; }
+.res-status {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 700;
+}
+.st-pending { background: rgba(212, 175, 55, 0.2); color: var(--gold-dark); }
+.st-confirmed { background: rgba(74, 222, 128, 0.2); color: #15803D; }
+.st-cancelled { background: rgba(168, 90, 108, 0.15); color: var(--rose-800); }
+
+.otp-input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 16px;
+    text-align: center;
+    font-size: 1.85rem;
+    font-weight: 800;
+    letter-spacing: .6em;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid rgba(212, 175, 55, 0.3);
+    background: var(--surface);
+    color: var(--plum-900);
+    font-family: var(--font-en-serif);
+}
+.otp-input:focus {
+    outline: none;
+    border-color: var(--rose-700);
+    box-shadow: 0 0 0 3px rgba(168, 90, 108, 0.18);
+}
+
+.btn:disabled { opacity: .55; cursor: not-allowed; transform: none !important; }
+
+.brand-mark svg { width: 26px; height: 26px; }
