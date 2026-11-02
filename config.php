@@ -5,10 +5,15 @@ if (file_exists(__DIR__ . '/env.php')) {
 }
 
 // ===== إعدادات قاعدة البيانات =====
-define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
-define('DB_NAME', getenv('DB_NAME') ?: 'offline_spa');
-define('DB_USER', getenv('DB_USER') ?: 'root');
-define('DB_PASS', getenv('DB_PASS') ?: '');
+$dbHost = getenv('DB_HOST') ?: 'localhost';
+$dbName = getenv('DB_NAME') ?: 'offline_spa';
+$dbUser = getenv('DB_USER') ?: 'root';
+$dbPass = getenv('DB_PASS') ?: '';
+
+define('DB_HOST', $dbHost);
+define('DB_NAME', $dbName);
+define('DB_USER', $dbUser);
+define('DB_PASS', $dbPass);
 
 date_default_timezone_set('Asia/Riyadh');
 session_set_cookie_params(['lifetime' => 0, 'path' => '/', 'httponly' => true, 'samesite' => 'Lax']);
@@ -16,18 +21,10 @@ session_start();
 
 $pdoOpts = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC];
 try {
-    try {
-        $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4', DB_USER, DB_PASS, $pdoOpts);
-    } catch (PDOException $e) {
-        $unknownDb = ((int)$e->getCode() === 1049) || (isset($e->errorInfo[1]) && (int)$e->errorInfo[1] === 1049) || stripos($e->getMessage(), 'Unknown database') !== false;
-        if (!$unknownDb) throw $e;
-        // القاعدة غير موجودة: ننشئها تلقائياً
-        $tmp = new PDO('mysql:host=' . DB_HOST . ';charset=utf8mb4', DB_USER, DB_PASS, $pdoOpts);
-        $tmp->exec('CREATE DATABASE IF NOT EXISTS `' . DB_NAME . '` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci');
-        $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4', DB_USER, DB_PASS, $pdoOpts);
-    }
+    $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4', DB_USER, DB_PASS, $pdoOpts);
 } catch (PDOException $e) {
-    die('تعذر الاتصال بقاعدة البيانات. تأكد من تشغيل MySQL في XAMPP.');
+    // عرض الخطأ الحقيقي للتشخيص (سنقوم بحذفه بعد الإصلاح)
+    die('خطأ في الاتصال بقاعدة البيانات: ' . $e->getMessage() . '<br>HOST: ' . DB_HOST . '<br>USER: ' . DB_USER);
 }
 
 const BRAND_MARK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5c2.3 2.3 3.3 4.6 3.3 6.9S13.8 15 12 15s-3.3-2.3-3.3-4.6S9.7 5.8 12 3.5z"/><path d="M3.5 10c2.7.1 4.6 1.3 5.8 3.4M20.5 10c-2.7.1-4.6 1.3-5.8 3.4"/><path d="M6 18.5c2.2-1.7 4-2.5 6-2.5s3.8.8 6 2.5"/></svg>';
