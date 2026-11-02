@@ -4,11 +4,11 @@ if (file_exists(__DIR__ . '/env.php')) {
     require_once __DIR__ . '/env.php';
 }
 
-// ===== إعدادات قاعدة البيانات (القيم الافتراضية إذا لم تكن في env.php) =====
-if (!defined('DB_HOST')) define('DB_HOST', 'localhost');
-if (!defined('DB_NAME')) define('DB_NAME', 'offline_spa');
-if (!defined('DB_USER')) define('DB_USER', 'root');
-if (!defined('DB_PASS')) define('DB_PASS', '');
+// ===== إعدادات قاعدة البيانات =====
+define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+define('DB_NAME', getenv('DB_NAME') ?: 'offline_spa');
+define('DB_USER', getenv('DB_USER') ?: 'root');
+define('DB_PASS', getenv('DB_PASS') ?: '');
 
 date_default_timezone_set('Asia/Riyadh');
 session_set_cookie_params(['lifetime' => 0, 'path' => '/', 'httponly' => true, 'samesite' => 'Lax']);
